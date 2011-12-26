@@ -1,5 +1,8 @@
 /web/bundles/
 /app/bootstrap*
 /app/config/parameters.ini
+/app/cache/*
+/app/logs/*
+/vendor/
 .idea
 .DS_Store
