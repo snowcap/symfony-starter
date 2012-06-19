@@ -6,8 +6,8 @@
     database_host     = localhost
     database_port     =
     database_name     = symfony
-    database_user     = root
-    database_password =
+    database_user     = dev
+    database_password = dev
 
     mailer_transport  = smtp
     mailer_host       = localhost
