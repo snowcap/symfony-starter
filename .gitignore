@@ -3,6 +3,7 @@
 /app/config/parameters.ini
 /app/cache/*
 /app/logs/*
+/web/uploads/*
 /vendor/
 .idea
 .DS_Store
