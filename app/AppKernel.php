@@ -17,6 +17,12 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new Snowcap\CoreBundle\SnowcapCoreBundle(),
+            //new Snowcap\BootstrapBundle\SnowcapBootstrapBundle(),
+            //new Snowcap\AdminBundle\SnowcapAdminBundle(),
+            //new Snowcap\ImBundle\SnowcapImBundle(),
+            //new Snowcap\I18nBundle\SnowcapI18nBundle(),
+            //new Snowcap\YamlFixturesBundle\SnowcapYamlFixturesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

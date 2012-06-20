@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{{ meta_title|default('meta.default.title'|trans) }} - {{ 'sitename'|trans }}</title>
+        <meta name="description" content="{{ meta_description|default('meta.default.description'|trans) }}"/>
+        <meta name="keywords" content="{{ meta_keywords|default('meta.default.keywords'|trans) }}"/>
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('bundles/snowcapsite/css/all.css') }}"/>
+            <!--[if IE]>
+                <link rel="stylesheet" type="text/css" href="{{ asset('bundles/ddhsite/css/ie.css') }}" />
+            <![endif]-->
+        {% endblock %}
+        <script type="text/javascript" src="http://use.typekit.com/ipj8clc.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script src="{{ asset("bundles/ddhsite/js/libs/modernizr-2.5.3.min.js") }}"></script>
+        <link rel="shortcut icon" href="{{ asset("favicon.ico") }}"/>
+    </head>
+    <body class="{{ body_class|default('default') }}">
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset("bundles/snowcapcore/vendor/jquery/jquery.min.js") }}"></script>
+            <script type="text/javascript" src="{{ asset("bundles/snowcapsite/js/all.js") }}"></script>
+        {% endblock %}
+    </body>
+</html>

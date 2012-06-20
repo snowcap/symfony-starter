@@ -1,3 +1,12 @@
+# AdminBundle routing configuration
+#snowcap_admin:
+#    resource: "@SnowcapAdminBundle/Resources/config/routing.yml"
+#    prefix: /admin
+
+# ImBundle routing configuration
+#snowcap_im:
+#  resource: "@SnowcapImBundle/Resources/config/routing.yml"
+
 # Internal routing configuration to handle ESI
 #_internal:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"

@@ -2,9 +2,14 @@ imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
 
+# Extra parameters
+parameters:
+    # List of available locales
+    locales: [en]
+
 framework:
     #esi:             ~
-    #translator:      { fallback: %locale% }
+    translator:      { fallback: %locale% }
     secret:          %secret%
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
@@ -58,3 +63,35 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
+
+# Snowcap AdminBundle Configuration
+#snowcap_admin:
+#    bundle: YourAdminBundle
+#    sections:
+#        pages:
+#            label: section_pages
+#            admin_class: Your\AdminBundle\Admin\PageAdmin
+#            entity_class: Snowcap\SiteBundle\Entity\Page
+#            translation_entity_class: Snowcap\SiteBundle\Entity\PageTranslation
+
+# Snowcap ImBundle Configuration
+#snowcap_im:
+#  formats:
+#    thumbnail:
+#        resize: 200x100^
+#        gravity: center
+#        crop: 200x100+0+0
+
+# Zend Cache Configuration
+#knp_zend_cache:
+#    templates:
+#        your_cache:
+#            frontend:
+#                name: Core
+#                options:
+#                    lifetime: 7200
+#                    automatic_serialization: true
+#            backend:
+#                name: Apc
+#                options:
+#                    cache_dir: %kernel.root_dir%/cache/%kernel.environment%
