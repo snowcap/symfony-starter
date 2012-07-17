@@ -1,8 +1,3 @@
-EggoSiteBundle:
-    resource: "@EggoSiteBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 # AdminBundle routing configuration
 #snowcap_admin:
 #    resource: "@SnowcapAdminBundle/Resources/config/routing.yml"

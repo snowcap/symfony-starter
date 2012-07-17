@@ -23,7 +23,6 @@ class AppKernel extends Kernel
             //new Snowcap\ImBundle\SnowcapImBundle(),
             //new Snowcap\I18nBundle\SnowcapI18nBundle(),
             //new Snowcap\YamlFixturesBundle\SnowcapYamlFixturesBundle(),
-            new Eggo\SiteBundle\EggoSiteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
