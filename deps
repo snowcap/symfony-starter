@@ -65,14 +65,17 @@
 [SnowcapCoreBundle]
     git=git://github.com/snowcap/SnowcapCoreBundle.git
     target=/bundles/Snowcap/CoreBundle
+    version=origin/2.0
 
 [SnowcapBootstrapBundle]
     git=git://github.com/snowcap/SnowcapBootstrapBundle.git
     target=/bundles/Snowcap/BootstrapBundle
+    version=origin/2.0
 
 [SnowcapAdminBundle]
     git=git://github.com/snowcap/SnowcapAdminBundle.git
     target=/bundles/Snowcap/AdminBundle
+    version=origin/2.0
 
 [doctrine-fixtures]
     git=git://github.com/doctrine/data-fixtures.git
@@ -85,14 +88,17 @@
 [SnowcapYamlFixturesBundle]
     git=git://github.com/snowcap/SnowcapYamlFixturesBundle.git
     target=/bundles/Snowcap/YamlFixturesBundle
+    version=origin/2.0
 
 [SnowcapImBundle]
     git=https://github.com/snowcap/SnowcapImBundle.git
     target=/bundles/Snowcap/ImBundle
+    version=origin/2.0
 
 [SnowcapI18nBundle]
     git=git://github.com/snowcap/SnowcapI18nBundle.git
     target=/bundles/Snowcap/I18nBundle
+    version=origin/2.0
 
 [DoctrineExtensions]
     git=https://github.com/beberlei/DoctrineExtensions.git
@@ -108,3 +114,8 @@
 [KnpZendCacheBundle]
     git=git://github.com/KnpLabs/KnpZendCacheBundle.git
     target=/bundles/Knp/Bundle/ZendCacheBundle
+
+[lessphp]
+    git=https://github.com/leafo/lessphp.git
+    target=/lessphp
+    version=v0.3.4-2
