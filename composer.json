@@ -19,9 +19,9 @@
         "jms/security-extra-bundle": "1.2.*",
         "jms/di-extra-bundle": "1.1.*",
         "kriswallsmith/assetic": "1.1.*@dev",
-        "leafo/lessphp": "dev-master",
-        "snowcap/core-bundle": "dev-master",
-        "snowcap/im-bundle": "dev-master"
+        "leafo/lessphp": "v0.3.8",
+        "snowcap/core-bundle": "2.1.*@dev",
+        "snowcap/im-bundle": "2.1.*@dev"
 
     },
     "scripts": {
