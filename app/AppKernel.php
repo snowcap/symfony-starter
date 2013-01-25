@@ -20,11 +20,7 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Snowcap\CoreBundle\SnowcapCoreBundle(),
-            //new Snowcap\BootstrapBundle\SnowcapBootstrapBundle(),
-            //new Snowcap\AdminBundle\SnowcapAdminBundle(),
-            //new Snowcap\ImBundle\SnowcapImBundle(),
-            //new Snowcap\I18nBundle\SnowcapI18nBundle(),
-            //new Snowcap\YamlFixturesBundle\SnowcapYamlFixturesBundle(),
+            new Snowcap\ImBundle\SnowcapImBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

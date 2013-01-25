@@ -1,9 +1,10 @@
-/web/bundles/
-/app/bootstrap*
+web/bundles/
+app/bootstrap.php.cache
+app/cache/*
+app/logs/*
+build/
+vendor
 /app/config/parameters.yml
-/app/cache/*
-/app/logs/*
-/web/uploads/*
-/vendor/
+
 .idea
 .DS_Store
