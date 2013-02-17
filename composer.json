@@ -19,8 +19,8 @@
         "jms/security-extra-bundle": "1.4.*",
         "jms/di-extra-bundle": "1.3.*",
         "leafo/lessphp": "v0.3.8",
-        "snowcap/core-bundle": "2.1.*@dev",
-        "snowcap/im-bundle": "2.1.*@dev"
+        "snowcap/core-bundle": "2.2.*@dev",
+        "snowcap/im-bundle": "2.2.*@dev"
     },
     "scripts": {
         "post-install-cmd": [
