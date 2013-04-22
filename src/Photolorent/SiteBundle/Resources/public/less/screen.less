@@ -32,6 +32,59 @@
     filter: ~"alpha(opacity=@{opacity})";
 }
 
+// Border Radius
+.border-radius(@radius) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+// Single Corner Border Radius
+.border-top-left-radius(@radius) {
+    -webkit-border-top-left-radius: @radius;
+    -moz-border-radius-topleft: @radius;
+    border-top-left-radius: @radius;
+}
+.border-top-right-radius(@radius) {
+    -webkit-border-top-right-radius: @radius;
+    -moz-border-radius-topright: @radius;
+    border-top-right-radius: @radius;
+}
+.border-bottom-right-radius(@radius) {
+    -webkit-border-bottom-right-radius: @radius;
+    -moz-border-radius-bottomright: @radius;
+    border-bottom-right-radius: @radius;
+}
+.border-bottom-left-radius(@radius) {
+    -webkit-border-bottom-left-radius: @radius;
+    -moz-border-radius-bottomleft: @radius;
+    border-bottom-left-radius: @radius;
+}
+
+// Single Side Border Radius
+.border-top-radius(@radius) {
+    .border-top-right-radius(@radius);
+    .border-top-left-radius(@radius);
+}
+.border-right-radius(@radius) {
+    .border-top-right-radius(@radius);
+    .border-bottom-right-radius(@radius);
+}
+.border-bottom-radius(@radius) {
+    .border-bottom-right-radius(@radius);
+    .border-bottom-left-radius(@radius);
+}
+.border-left-radius(@radius) {
+    .border-top-left-radius(@radius);
+    .border-bottom-left-radius(@radius);
+}
+
+// Drop shadows
+.box-shadow(@shadow) {
+    -webkit-box-shadow: @shadow;
+    -moz-box-shadow: @shadow;
+    box-shadow: @shadow;
+}
 
 /* ==========================================================================
    Globals
@@ -55,6 +108,11 @@ body {
     background-color: @black;
     color: @white;
     font-family: "Open Sans", sans-serif;
+    overflow: hidden;
+}
+a {
+    color: @white;
+    text-decoration: none;
 }
 .container {
     height: 100%;
@@ -104,6 +162,34 @@ body {
             p {
                 background: rgba(0, 0, 0, .5);
                 padding: 15px;
+            }
+        }
+    }
+    .menu {
+        position: absolute;
+        z-index: 10000;
+        bottom: 0;
+        right: 0;
+        background-color: @black;
+        overflow: hidden;
+        width: 45%;
+        .border-top-left-radius(15px);
+        .opacity(90);
+        ul {
+            width: 90%;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            li {
+                float: left;
+                margin: 0 2% 0 0;
+                padding: 2%;
+                a {
+                    .opacity(60);
+                    &:hover {
+                        .opacity(100);
+                    }
+                }
             }
         }
     }
