@@ -1,0 +1,7 @@
+parameters:
+#    photolorent_site.example.class: Photolorent\SiteBundle\Example
+
+services:
+#    photolorent_site.example:
+#        class: %photolorent_site.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

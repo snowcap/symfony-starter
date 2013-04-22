@@ -1,0 +1,16 @@
+{% extends "PhotolorentSiteBundle::base.html.twig" %}
+{% set body_class = 'home' %}
+{% block content %}
+    <div class="slider">
+        <div class="slide portrait">
+            <h1 class="logo"><a href="{{ path('photolorent_site_default_index') }}">PhotoLorent.be</a></h1>
+            <p>PhotoLorent depuis la capitale de l'Europe, apporte le talent créatif de Lorent et d'autres photographes chevronnés afin d' "écrire avec la lumière".</p>
+            <p>Leur habilité sert à élaborer des histoires photographiques  et à faire revivre vos souvenirs en photos. Qu'il s'agisse de futurs mariés, de seniors, d'une réunion de famille, d'un 50e anniversaire ou d'athlètes en course sous la chaleur de la concurrence, ce sont des histoires que nous racontons.</p>
+            <p>Partagez votre vie avec nous et laissez-nous raconter l'histoire de ce moment!</p>
+        </div>
+        {% for file in files %}
+            <img class="slide" src="{{ asset('uploads/mariages/' ~ file) }}" alt="{{ 'alternate_text'|trans }}"/>
+        {% endfor %}
+    </div>
+
+{% endblock content %}
