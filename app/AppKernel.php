@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Snowcap\CoreBundle\SnowcapCoreBundle(),
             new Snowcap\ImBundle\SnowcapImBundle(),
+            new Photolorent\SiteBundle\PhotolorentSiteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

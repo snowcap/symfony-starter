@@ -1,0 +1,110 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700");
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+@black: #000;
+@white: #fff;
+
+@openSans:  'Open Sans', sans-serif;
+
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+// Box sizing
+.box-sizing(@boxmodel) {
+    -webkit-box-sizing: @boxmodel;
+    -moz-box-sizing: @boxmodel;
+    box-sizing: @boxmodel;
+}
+// Background size
+.background-size(@size) {
+    -webkit-background-size: @size;
+    -moz-background-size: @size;
+    -o-background-size: @size;
+    background-size: @size;
+}
+// Opacity
+.opacity(@opacity) {
+    opacity: @opacity / 100;
+    filter: ~"alpha(opacity=@{opacity})";
+}
+
+
+/* ==========================================================================
+   Globals
+   ========================================================================== */
+
+// Using border-box by default
+*, *:before, *:after {
+    .box-sizing(border-box);
+    zoom: 1;
+    *behavior: url(/bundles/photolorentsite/htc/boxsizing.htc);
+}
+html {
+    height: 100%;
+    font-size: 100%;
+}
+body {
+    height: 100%;
+    font-size: 0.9em;
+    margin: 0;
+    padding: 0;
+    background-color: @black;
+    color: @white;
+    font-family: "Open Sans", sans-serif;
+}
+.container {
+    height: 100%;
+    .logo {
+        .box-sizing(content-box);
+        position: absolute;
+        top: 5%;
+        right: 0;
+        background: @black url(../images/logo.png) no-repeat left top;
+        width: 176px;
+        height: 65px;
+        text-indent: -10000em;
+        margin: 0 2% 0 0;
+        border: 10px solid @black;
+        z-index: 1000;
+        .opacity(80);
+        a {
+            display: block;
+        }
+        &:hover {
+            .opacity(30);
+        }
+    }
+    .slider {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space:nowrap;
+        height: 100%;
+        .slide {
+            height: 100%;
+            display:inline-block;
+            *display:inline;/* For IE7*/
+            *zoom:1;/* For IE7*/
+            vertical-align:top;
+        }
+        .portrait {
+            white-space: normal;
+            width: 35%;
+            padding: 10% 5%;
+            min-width: 250px;
+            background: transparent url(../images/lorent.jpg) no-repeat left top;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            letter-spacing: 1.5px;
+            .background-size(cover);
+            .opacity(90);
+            p {
+                background: rgba(0, 0, 0, .5);
+                padding: 15px;
+            }
+        }
+    }
+}
