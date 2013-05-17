@@ -8,6 +8,7 @@
 /bin/
 /composer.phar
 /web/cache/*
+/web/uploads/*
 
 .idea
 .DS_Store
