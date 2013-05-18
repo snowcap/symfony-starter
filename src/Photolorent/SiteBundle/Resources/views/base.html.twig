@@ -29,11 +29,21 @@
         {% block body %}
         <div class="container">
             {% block container %}
-                {% for key, flash in app.session.getFlashes() %}
-                <div class="flash flash-{{ key }}">
-                    {{ flash | raw }}
-                </div>
-                {% endfor %}
+                {% block messages %}
+                    {% if app.session.flashbag.peekAll()|length > 0 %}
+                        <div class="messages">
+                            {% for type, flashes in app.session.flashbag.all() %}
+                                <div class="flash flash-{{ type }}">
+                                    <ul>
+                                        {% for flash in flashes %}
+                                            <li>{{ flash | raw }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endblock messages %}
                 <section>
                     {% block content %}In the base template{% endblock content %}
                 </section>
