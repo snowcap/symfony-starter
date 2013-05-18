@@ -65,3 +65,10 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+
+snowcap_im:
+    binary_path: %snowcap_im_binary_path%
+    formats:
+        slider:
+            thumbnail: 1920x>
+            #quality: 80

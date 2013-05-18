@@ -8,8 +8,8 @@
             <p>Leur habilité sert à élaborer des histoires photographiques  et à faire revivre vos souvenirs en photos. Qu'il s'agisse de futurs mariés, de seniors, d'une réunion de famille, d'un 50e anniversaire ou d'athlètes en course sous la chaleur de la concurrence, ce sont des histoires que nous racontons.</p>
             <p>Partagez votre vie avec nous et laissez-nous raconter l'histoire de ce moment!</p>
         </div>
-        {% for file in files %}
-            <img class="slide" src="{{ asset('uploads/mariages/' ~ file) }}" alt="{{ 'alternate_text'|trans }}"/>
+        {% for index in 0..10 %}
+            <img class="slide" src="{{ asset(files[index])|imresize('slider') }}" alt="{{ 'alternate_text'|trans }}"/>
         {% endfor %}
     </div>
     <nav class="menu">

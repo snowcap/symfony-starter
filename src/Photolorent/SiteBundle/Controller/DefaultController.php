@@ -17,19 +17,9 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $path = $this->get('kernel')->getRootDir() . '/../web/uploads/mariages/*';
-        $finder = new Finder();
+        $fm = $this->get('photolorent.file_manager');
 
-        $finder->in($path)->sortByName();
-        $finder->files()->name('*.jpg');
-
-        $files = array();
-        /** @var $file SplFileInfo */
-        foreach($finder as $file) {
-            //$content = $file->getContents();
-
-            $files[] = basename($file->getPath()) . '/' . $file->getFilename();
-        }
+        $files = $fm->getPaths($fm->getFiles('home'));
 
         return array('files' => $files);
     }

@@ -9,5 +9,5 @@ photolorent_site:
 #    prefix: /admin
 
 # ImBundle routing configuration
-#snowcap_im:
-#  resource: "@SnowcapImBundle/Resources/config/routing.yml"
+snowcap_im:
+  resource: "@SnowcapImBundle/Resources/config/routing.yml"
