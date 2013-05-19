@@ -39,6 +39,11 @@
         $element.bind('mousemove', function(e){
             var center = $('body').width() / 2;
             var step = (e.pageX - center) / 50;
+            if (e.pageX > center) {
+                $('.slider .next').css({'opacity': step/10});
+            } else {
+                $('.slider .previous').css({'opacity': (-step)/10});
+            }
             $element.find('img:first').animate(
                 {
                     'margin-left': -step

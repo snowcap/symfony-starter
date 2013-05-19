@@ -1,16 +1,53 @@
 (function($) {
     $(document).ready(function() {
-        $('img.slide').preloadSlide();
-        $('.slider').followMouse();
+        var $slider = $('.slider');
+        var $current = $('.current', $slider);
+        var currentOffset = 0;
+        $('img.slide', $slider).preloadSlide();
+        $slider.followMouse();
+        $('.previous', $slider).on('click',function(event){
+            event.preventDefault();
+            if (!$current.hasClass('first')) {
+                currentOffset -= $current.offset().left - $current.prev().offset().left;
+                $slider.stop().animate(
+                    {
+                        scrollLeft: currentOffset
+                    },
+                    1000,
+                    function() {
+                        $current = $current.removeClass('current').prev('img').addClass('current');
+                    }
+                );
+            }
+        });
+        $('.next', $slider).on('click',function(event){
+            event.preventDefault();
+            if (!$current.hasClass('last')) {
+                $('.slide', $slider).preloadSlide();
+                currentOffset += $current.next().offset().left;
+                $slider.stop().animate(
+                    {
+                        scrollLeft: currentOffset
+                    },
+                    1000,
+                    function() {
+                        $current = $current.removeClass('current').next('img').addClass('current');
+                        $('.slide', $slider).preloadSlide();
+                    }
+                );
+
+            }
+        });
         $(document).on('mousewheel', '.slider', function(event, delta) {
             this.scrollLeft -= (delta * 100);
             event.preventDefault();
-            $('img.slide').preloadSlide();
+            $('.slide', $slider).preloadSlide();
+
         });
         $(document).on('click', '.menu li a:not([target="_blank"])', function(event) {
             event.preventDefault();
             var $link = $(this);
-
+            $('.portrait').remove();
             var $loader = $('<div></div>').addClass('loader').appendTo($('body'));
             var $sight = $('<img/>').attr('src', photolorent.assets.sight).addClass('sight').appendTo($loader);
             var $objectiveTop = $('<div></div>').addClass('objective objective-top').appendTo($loader);
@@ -39,7 +76,7 @@
 
                 $objectiveBottom.animate({'height': '70%'}, 200, function() {
                     $('section').removeClass('blur').html(data);
-                    $('img.slide').preloadSlide();
+                    $('.slide', $slider).preloadSlide();
                     $('.slider').followMouse();
                     $(this).animate({'height': 0}, 100, function() {
                         $(this).remove();
