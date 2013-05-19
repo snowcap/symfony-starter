@@ -15,7 +15,7 @@ class FileManager
      */
     public function __construct($rootPath)
     {
-        $this->rootPath = realpath($rootPath . '/../web/uploads/');
+        $this->rootPath = realpath($rootPath . '/../web/');
     }
 
     /**
@@ -42,34 +42,6 @@ class FileManager
 
         return $files;
 
-    }
-
-    /**
-     * @param array $files
-     *  Array of SplFileInfo
-     *
-     * @return array
-     *  Array of strings container the relative paths to the file
-     */
-    public function getPaths($files)
-    {
-        $paths = array();
-        foreach($files as $file) {
-            $paths[] = $this->getPath($file);
-        }
-
-        return $paths;
-    }
-
-    /**
-     * @param SplFileInfo $file
-     *
-     * @return string
-     *  Relative path to the uploads directory
-     */
-    public function getPath(SplFileInfo $file)
-    {
-        return 'uploads/' . basename($file->getPath()) . '/' . $file->getFilename();
     }
 
     /**
