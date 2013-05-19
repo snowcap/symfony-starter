@@ -12,8 +12,8 @@
         </div>
         {% block slides %}
             {% if files|length > 0 %}
-                {% for index in 0..10 %}
-                    <img class="slide" src="{{ asset(directory ~ files[index].filename)|imresize('slider') }}" alt="{{ 'alternate_text'|trans }}"/>
+                {% for file in files %}
+                    <img class="slide" src="" data-src="{{ asset(directory ~ file.filename)|imresize('slider') }}" alt="{{ 'alternate_text'|trans }}"/>
                 {% endfor %}
             {% else %}
                 <p>{{ 'no_pictures_found'|trans }}</p>

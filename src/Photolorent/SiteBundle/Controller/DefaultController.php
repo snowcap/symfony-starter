@@ -34,7 +34,7 @@ class DefaultController extends Controller
     {
         $fm = $this->get('photolorent.file_manager');
 
-        $directory = 'uploads/mariages/mariannenicolas/';
+        $directory = 'uploads/mariages/';
 
         $files = $fm->getFiles($directory);
 

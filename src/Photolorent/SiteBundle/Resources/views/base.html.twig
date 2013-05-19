@@ -51,9 +51,17 @@
         </div>
         {% endblock body %}
         {% block javascripts %}
+            <script type="text/javascript">
+                var photolorent = {
+                    'assets': {
+                        'sight': '{{ asset('bundles/photolorentsite/images/sight.png') }}'
+                    }
+                };
+            </script>
             {% javascripts
                 'bundles/snowcapcore/vendor/jquery/jquery.js'
                 'bundles/photolorentsite/js/vendor/jquery.mousewheel/jquery.mousewheel.js'
+                'bundles/photolorentsite/js/plugins.js'
                 'bundles/photolorentsite/js/screen.js'
                 filter='?yui_js'
                 output='cache/assetic/js/all.js'

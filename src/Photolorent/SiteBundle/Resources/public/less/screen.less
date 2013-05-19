@@ -150,16 +150,16 @@ a {
             vertical-align:top;
         }
         .portrait {
+            min-height: 749px;
             white-space: normal;
             width: 35%;
-            padding: 10% 5%;
+            padding: 2%;
             min-width: 250px;
-            background: transparent url(../images/lorent.jpg) no-repeat left top;
             overflow: hidden;
             text-overflow: ellipsis;
             letter-spacing: 1.5px;
+            background: black url(../images/lorent.jpg) no-repeat left top;
             .background-size(cover);
-            .opacity(90);
             p {
                 background: rgba(0, 0, 0, .5);
                 padding: 15px;
@@ -196,30 +196,37 @@ a {
     }
 }
 
-.sight {
+.loader {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    height: 297px;
-    margin: -147px 0 0 -250px;
-    background: transparent url(../images/sight.png) no-repeat center center;
-    z-index: 100;
-    .opacity(20);
-    .background-size(cover);
-}
-.objective {
-    position: absolute;
-    width: 100%;
-    height: 0;
     left: 0;
-    background-color: #000;
-    z-index: 1000;
-}
-.objective-top {
     top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 50;
+    .sight {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        height: 297px;
+        margin: -147px 0 0 -250px;
+        z-index: 100;
+        .opacity(50);
+    }
+    .objective {
+        position: absolute;
+        width: 100%;
+        height: 0;
+        left: 0;
+        background-color: #000;
+        z-index: 1000;
+    }
+    .objective-top {
+        top: 0;
 
-}
-.objective-bottom {
-    bottom: 0;
+    }
+    .objective-bottom {
+        bottom: 0;
+    }
 }
