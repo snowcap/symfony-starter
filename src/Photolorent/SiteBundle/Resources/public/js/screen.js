@@ -5,7 +5,7 @@
         var currentOffset = 0;
         $('img.slide', $slider).preloadSlide();
         $slider.followMouse();
-        $('.previous', $slider).on('click',function(event){
+        $(document).on('click','.slider .previous', function(event){
             event.preventDefault();
             if (!$current.hasClass('first')) {
                 currentOffset -= $current.offset().left - $current.prev().offset().left;
@@ -20,7 +20,7 @@
                 );
             }
         });
-        $('.next', $slider).on('click',function(event){
+        $(document).on('click', '.slider .next', function(event){
             event.preventDefault();
             if (!$current.hasClass('last')) {
                 $('.slide', $slider).preloadSlide();
@@ -76,6 +76,9 @@
 
                 $objectiveBottom.animate({'height': '70%'}, 200, function() {
                     $('section').removeClass('blur').html(data);
+                    $slider = $('.slider');
+                    $current = $('.current', $slider);
+                    currentOffset = 0;
                     $('.slide', $slider).preloadSlide();
                     $('.slider').followMouse();
                     $(this).animate({'height': 0}, 100, function() {

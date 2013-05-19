@@ -22,10 +22,8 @@
         var $slides = this;
         $slides.each(function(index, element) {
             var $element = $(element);
-            if ($element.attr('src') === '') {
-                if ($element.isOnScreen() || $($slides.get(index-1)).isOnScreen()) {
-                    $element.attr('src', $element.data('src'));
-                }
+            if ($element.isOnScreen() || $($slides.get(index-1)).isOnScreen() || $($slides.get(index-2)).isOnScreen()) {
+                $element.attr('src', $element.data('src'));
             }
         });
     };
