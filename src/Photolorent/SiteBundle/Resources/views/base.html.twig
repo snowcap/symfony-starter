@@ -10,8 +10,8 @@
         <meta name="keywords" content="{{ meta_keywords|default('meta.default.keywords'|trans) }}"/>
         <meta name=”viewport” content=”width=device-width” />
         {% stylesheets
-        'bundles/photolorentsite/less/screen.less'
-        filter='lessphp,cssrewrite,?yui_css'
+        'bundles/photolorentsite/css/screen.css'
+        filter='cssrewrite,?yui_css'
         output='cache/assetic/css/all.css'
         %}
         <link href="{{ asset_url }}" rel="stylesheet" type="text/css" media="screen" />

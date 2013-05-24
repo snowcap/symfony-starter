@@ -13,7 +13,7 @@
         {% block slides %}
             {% if files|length > 0 %}
                 {% for file in files %}
-                    <img class="slide{% if loop.first %} first current{% endif %}{% if loop.last %} last{% endif %}" src="" data-src="{{ asset(directory ~ file.filename)|imresize('slider') }}" alt="{{ 'alternate_text'|trans }}"/>
+                    <img class="slide{% if loop.first %} first current{% endif %}{% if loop.last %} last{% endif %}" src="{{ asset('bundles/photolorentsite/images/load.gif') }}" data-src="{{ asset(directory ~ file.filename)|imresize('slider') }}" alt="{{ 'alternate_text'|trans }}"/>
                 {% endfor %}
             {% else %}
                 <p>{{ 'no_pictures_found'|trans }}</p>

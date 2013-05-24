@@ -14,6 +14,7 @@
                         scrollLeft: currentOffset
                     },
                     1000,
+                    'easeOutQuad',
                     function() {
                         $current = $current.removeClass('current').prev('img').addClass('current');
                     }
@@ -30,6 +31,7 @@
                         scrollLeft: currentOffset
                     },
                     1000,
+                    'easeOutQuad',
                     function() {
                         $current = $current.removeClass('current').next('img').addClass('current');
                         $('.slide', $slider).preloadSlide();
@@ -43,6 +45,17 @@
             event.preventDefault();
             $('.slide', $slider).preloadSlide();
 
+        });
+        $(document).on('keydown', function (e) {
+            if (e.which === 39) {
+                //next
+                alert('next');
+            }
+            if (e.which === 37) {
+                //previous
+                alert('previous');
+            }
+            //if (e.which === 27) $('a.clearing-close').trigger('click');
         });
         $(document).on('click', '.menu li a:not([target="_blank"])', function(event) {
             event.preventDefault();
