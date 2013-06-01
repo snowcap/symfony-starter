@@ -18,7 +18,6 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Snowcap\CoreBundle\SnowcapCoreBundle(),
             new Snowcap\ImBundle\SnowcapImBundle(),
-            new Photolorent\SiteBundle\PhotolorentSiteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
