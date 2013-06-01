@@ -1,4 +1,0 @@
-services:
-    photolorent.file_manager:
-        class: Photolorent\SiteBundle\Manager\FileManager
-        arguments: [%kernel.root_dir%]
