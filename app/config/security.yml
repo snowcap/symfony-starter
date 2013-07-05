@@ -10,18 +10,29 @@ security:
         in_memory:
             memory:
                 users:
-                    lorent:  { password: photo, roles: [ 'ROLE_USER' ] }
-                    admin: { password: photo, roles: [ 'ROLE_ADMIN' ] }
+                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
+        login:
+            pattern:  ^/demo/secured/login$
+            security: false
+
         secured_area:
-            pattern:    ^/
-            http_basic:
-                realm: "Photolorent.be preview"
+            pattern:    ^/demo/secured/
+            form_login:
+                check_path: _security_check
+                login_path: _demo_login
+            logout:
+                path:   _demo_logout
+                target: _demo
+            #anonymous: ~
+            #http_basic:
+            #    realm: "Secured Demo Area"
 
     access_control:
-        - { path: ^/, roles: ROLE_USER }
+        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
