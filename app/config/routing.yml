@@ -1,7 +1,3 @@
-photolorent_site:
-    resource: "@PhotolorentSiteBundle/Controller/"
-    type:     annotation
-    prefix:   /
 
 # AdminBundle routing configuration
 #snowcap_admin:
