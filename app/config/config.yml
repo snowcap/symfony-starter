@@ -29,7 +29,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [PhotolorentSiteBundle]
+    bundles:        []
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -70,7 +70,3 @@ swiftmailer:
 
 snowcap_im:
     binary_path: %snowcap_im_binary_path%
-    formats:
-        slider:
-            thumbnail: 1920x>
-            #quality: 80
