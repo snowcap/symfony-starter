@@ -1,9 +1,3 @@
-
-# AdminBundle routing configuration
-#snowcap_admin:
-#    resource: "@SnowcapAdminBundle/Resources/config/routing.yml"
-#    prefix: /admin
-
 # ImBundle routing configuration
 snowcap_im:
   resource: "@SnowcapImBundle/Resources/config/routing.yml"

@@ -13,5 +13,5 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
-    
-    snowcap_im_binary_path: '/opt/local/bin/'
+
+    sentry_dsn: 'your_sentry_dsn'

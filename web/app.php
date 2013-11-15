@@ -18,8 +18,13 @@ require_once __DIR__.'/../app/AppKernel.php';
 
 $kernel = new AppKernel('prod', false);
 $kernel->loadClassCache();
+
+// Add php error handler
+$logger = new \Monolog\Logger('raven');
+$logger->pushHandler(new \Monolog\Handler\RavenHandler(new \Raven_Client('your_sentry_dsn')));
+\Monolog\ErrorHandler::register($logger);
+
 //$kernel = new AppCache($kernel);
-Request::enableHttpMethodParameterOverride();
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
