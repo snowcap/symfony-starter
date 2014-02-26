@@ -31,3 +31,5 @@ monolog:
         raven:
             type: raven
             dsn: %sentry_dsn%
+        console:
+            type:  console
