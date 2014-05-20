@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{ meta_title|default('meta.default.title'|trans) }} - {{ 'sitename'|trans }}</title>
+        <meta name="description" content="{{ meta_description|default('meta.default.description'|trans) }}"/>
+        <meta name="keywords" content="{{ meta_keywords|default('meta.default.keywords'|trans) }}"/>
+        {% block stylesheets %}
+            {% stylesheets
+                'bundles/glowsite/css/screen.css'
+                filter='cssrewrite,?yui_css'
+            %}
+                <link href="{{ asset_url }}" rel="stylesheet" type="text/css" media="screen" />
+            {% endstylesheets %}
+        {% endblock stylesheets %}
+        <link rel="shortcut icon" href="{{ asset("favicon.ico") }}"/>
+    </head>
+    <body class="{{ body_class|default('default') }}">
+        {% block body %}
+            {% block flashes %}
+                {% set flash_messages = app.session.flashbag.all() %}
+                {% if flash_messages|length > 0 %}
+                    <div class="flash-messages off" data-view="flash">
+                        {% for type, messages in flash_messages %}
+                            {% for message in messages %}
+                                <div class="flash flash-{{ type }}">{{ message }}</div>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endblock %}
+            {% block content %}
+                In the base template
+            {% endblock %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% javascripts
+                'bundles/glowsite/js/screen.js'
+                filter='?yui_js'
+            %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+    </body>
+</html>

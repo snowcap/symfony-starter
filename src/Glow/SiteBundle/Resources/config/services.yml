@@ -1,0 +1,7 @@
+parameters:
+#    glow_site.example.class: Glow\SiteBundle\Example
+
+services:
+#    glow_site.example:
+#        class: %glow_site.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
