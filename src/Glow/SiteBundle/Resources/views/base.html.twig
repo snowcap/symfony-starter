@@ -35,9 +35,15 @@
                     </div>
                 {% endif %}
             {% endblock %}
-            {% block content %}
-                In the base template
+            {% block header %}
+                {% include 'GlowSiteBundle:Partial:header.html.twig' %}
             {% endblock %}
+            <div class="container">
+                <div class="inner-container">
+                    {% block content %}In the base template{% endblock %}
+                </div>
+            </div>
+            {% block footer %}{% endblock %}
         {% endblock %}
 
         {% block javascripts %}
