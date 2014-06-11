@@ -3,8 +3,8 @@ parameters:
     database_host:     127.0.0.1
     database_port:     ~
     database_name:     symfony
-    database_user:     root
-    database_password: ~
+    database_user:     dev
+    database_password: dev
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
@@ -15,3 +15,5 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
 
     sentry_dsn: 'your_sentry_dsn'
+    
+    snowcap_im_binary_path: ~

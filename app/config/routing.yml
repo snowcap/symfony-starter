@@ -1,3 +1,8 @@
+glow_site:
+    resource: "@GlowSiteBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 # ImBundle routing configuration
 snowcap_im:
   resource: "@SnowcapImBundle/Resources/config/routing.yml"
